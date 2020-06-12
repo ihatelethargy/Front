@@ -1,0 +1,30 @@
+
+.js-time {
+    display:flex;
+    justify-content: space-around;
+}
+
+.time {
+    padding-top: 20px;
+}
+
+.js-time__date h1 {
+    color:  #e7dfd5;
+    font-size: 50px;
+}
+
+.js-time__clock h1 {
+    color:  #e7dfd5;
+    font-size: 50px;
+}
+
+.form,
+.js-greeting{
+    display:none;
+}
+
+.showing{
+    display:block;
+}
+
+

@@ -1,0 +1,11 @@
+@import "index.css";
+@import "reset.css";
+@import "gretting.css";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #204051;
+}

@@ -1,0 +1,11 @@
+@import "reset.css";
+@import "index.css";
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #204051;
+}

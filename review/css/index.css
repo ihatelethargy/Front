@@ -1,0 +1,8 @@
+.greeting__box__span,
+.form{
+    display: none;
+}
+
+.showing{
+    display: block;
+}

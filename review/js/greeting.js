@@ -1,44 +1,43 @@
 const form = document.querySelector(".js-form"),
-      input = form.querySelector("input");
-
-const greeting = document.querySelector(".greeting__box__span");
+      input = form.querySelector("input"),
+      greeting__box = document.querySelector(".greeting__box"),
+      greeting = greeting__box.querySelector("span");
 
 const USER_LS = "currentUser";
-const SHOWING_CN = "showing";
-
-
-function saveUser(user){
-    localStorage.setItem(USER_LS,user);
-}
-
-function getUser(event){
-    event.preventDefault();
-    const userName = input.value;
-    paintUser(userName);
-    saveUser(userName);
-}
+const SHOWING_CL = "showing";
 
 function askUser(){
-    form.classList.add(SHOWING_CN);
-    greeting.classList.remove(SHOWING_CN);
-    form.addEventListener("submit",getUser);
+    form.classList.add(SHOWING_CL);
+    addEventListener("submit",handleSubmit);
 }
 
-function paintUser(user){
-    greeting.classList.add(SHOWING_CN);
-    form.classList.remove(SHOWING_CN);
-    greeting.innerHTML = `hi ${user}`;
+function handleSubmit(event){
+    event.preventDefault();
+    const submitUser = input.value;
+    paintUser(submitUser);
+    input.value = "";
+}
+
+function saveUser(text){
+    localStorage.setItem(USER_LS,text);
+}
+
+function paintUser(text){
+    greeting.classList.add(SHOWING_CL);
+    form.classList.remove(SHOWING_CL);
+    greeting.innerText = text;
+    saveUser(text);
 }
 
 function loadName(){
-    const currentUser = localStorage.getItem(USER_LS);
-    if(currentUser === null){
+    const currentName = localStorage.getItem(USER_LS);
+    if(currentName === null){
         askUser();
     }else{
-        paintUser(currentUser);
+        paintUser(currentName);
     }
 }
-
+      
 function init(){
     loadName();
 }
